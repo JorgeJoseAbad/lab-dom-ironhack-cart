@@ -22,7 +22,7 @@ input {
 
 }
 
-.item {
+.products {
   margin-top: 50px;
   position: relative;
   width: 1000px;
@@ -30,7 +30,8 @@ input {
 
 }
 
-.product {
+.item {
+  width: 800px;
   margin-top: 5px;
   display: flex;
   justify-content: center;
@@ -44,19 +45,23 @@ input {
 }
 
 .col2 {
-
+width:50px;
 margin-left: 50px;
 margin-right: 50px;
 }
 
 .col3 {
-
+width: 200px;
 margin-left: 50px;
 margin-right: 50px;
 }
 
-.col4 {
+.col3 input{
+  width: 30px;
+}
 
+.col4 {
+width: 50px;
 margin-left: 50px;
 margin-right: 50px;
 }
