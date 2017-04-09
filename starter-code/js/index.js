@@ -9,11 +9,19 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+ var itemCost=itemNode.querySelector('#total').innerHTML;
+ var itemCostInteger=parseInt(itemCost.substr(1));
+ return itemCostInteger;
 }
 
 function updatePriceByProduct(productPrice, index){
 
+}
+
+function writeTotalPrice(totalPrice){
+  var wTotalPrice=document.getElementsByClassName('total-price')[0];
+  console.log(wTotalPrice);
+  wTotalPrice.querySelector('span').innerHTML='$'+totalPrice;
 }
 
 function getTotalPrice(){
@@ -34,7 +42,12 @@ function getTotalPrice(){
       var totalPrice=items[i].querySelector('#total');
       totalPrice.innerHTML='$'+precioTotal;
     }
-
+    var sumPrices=0;
+  for (j=0;j<items.length;j++){
+    sumPrices+=getPriceByProduct(items[j]);
+  }
+ console.log(sumPrices);
+ writeTotalPrice(sumPrices);
 }
 /* old function getTotalPrice only for one item
 function getTotalPrice() {
