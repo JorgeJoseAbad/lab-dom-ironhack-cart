@@ -5,7 +5,13 @@ console.log("hola");
 console.log("HE pasado por aqui");
 
 function deleteItem(e){
-
+  console.log("in delete item");
+  var divCol5Delete=e.currentTarget.parentNode;
+  console.log(divCol5Delete);
+  var itemToDelete=divCol5Delete.parentNode;
+  console.log(itemToDelete);
+  var parentOfItenToDelete=itemToDelete.parentNode;
+  parentOfItenToDelete.removeChild(itemToDelete);
 }
 
 function getPriceByProduct(itemNode){
@@ -108,12 +114,14 @@ window.onload = function(){
   //declaraciones originales
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementsByClassName('item')[0];
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  var deleteButtons = document.getElementsByClassName('delete');
   //var calculatePriceButton = document.getElementsByTagName('button')[1];
   console.log("DOM calculatepriceboton: ");
   console.log(calculatePriceButton); //es un elemento DOM
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
+
+console.log(deleteButtons);
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
