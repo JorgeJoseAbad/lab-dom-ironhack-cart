@@ -88,7 +88,7 @@ function createQuantityNode(){
   col3.setAttribute('class','col3');
   var col3label=document.createElement('label');
   col3label.setAttribute('for','cantidad');
-  col3label.innerHTML='QTY';
+  col3label.innerHTML='QTY ';
   col3.appendChild(col3label);
   var col3input=document.createElement('input');
   col3input.setAttribute('type','text');
@@ -164,24 +164,38 @@ function createNewItemRow(itemName, itemUnitPrice){
   item.appendChild(newItemTotalCost);
   item.appendChild(newDeleteButton);
 
-  console.log(item);
+  console.log(item.children);
+  console.log(item.firstChild);
+  console.log(item.firstElementChild);
+
 
   var parentOfItem=document.getElementsByClassName('products')[0];
   parentOfItem.insertBefore(item,document.getElementsByClassName('new-item')[0]);
 
+  console.log(item.parentNode);
+  console.log(item.parentElement);
+
 }
 
 function createNewItem(){
- console.log("in function createNewItem");
- var newItemName=document.getElementsByClassName('new-item')[0].
-                    querySelector('#new-product-name').value;
+   console.log("in function createNewItem");
+   var newItemName=document.getElementsByClassName('new-item')[0].
+                      querySelector('#new-product-name').value;
 
- var newItemCost=document.getElementsByClassName('new-item')[0].
-                    querySelector('#new-price-per-unit').value;
+   var newItemCost=document.getElementsByClassName('new-item')[0].
+                      querySelector('#new-price-per-unit').value;
 
-console.log(newItemName);
-console.log(newItemCost);
-createNewItemRow(newItemName,newItemCost);
+  console.log(newItemName);
+  console.log(newItemCost);
+  createNewItemRow(newItemName,newItemCost);
+
+  //se incluye aqui esta funcion para generar nuevos botones activos de delete
+  var deleteButtons2 = document.getElementsByClassName('delete');
+  console.log(deleteButtons2);
+  for(var i = 0; i<deleteButtons2.length ; i++){
+    deleteButtons2[i].onclick = deleteItem;
+  }
+
 }
 
 window.onload = function(){
@@ -190,7 +204,7 @@ window.onload = function(){
 
   //declaraciones originales
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementsByClassName('new-item-button')[0];
+  var createItemButton = document.getElementById('new-item-button');
   var deleteButtons = document.getElementsByClassName('delete');
   //var calculatePriceButton = document.getElementsByTagName('button')[1];
   console.log("DOM calculatepriceboton: ");

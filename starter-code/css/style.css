@@ -45,15 +45,15 @@ input {
 }
 
 .col2 {
-width:50px;
-margin-left: 50px;
-margin-right: 50px;
+  width:50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .col3 {
-width: 200px;
-margin-left: 50px;
-margin-right: 50px;
+  width: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .col3 input{
@@ -61,16 +61,15 @@ margin-right: 50px;
 }
 
 .col4 {
-width: 50px;
-margin-left: 50px;
-margin-right: 50px;
+  width: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .col5 {
-
-margin-left: 50px;
-margin-right: 10px;
-background-color: red;
+  margin-left: 50px;
+  margin-right: 10px;
+  background-color: red;
 }
 
 
